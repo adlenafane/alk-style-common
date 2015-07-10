@@ -57,6 +57,14 @@ label {
     border-color: $color;
 }
 
+@mixin form-fullscreen-box($background-color, $text-color, $border-color) {
+    background-color: $background-color;
+    border: 1px solid $border-color;
+    border-radius: 4px;
+    color: $text-color;
+    padding: $padding-base-vertical $padding-base-horizontal;
+}
+
 /** Input styles with an adjacent label
 *  Usage:
 * <input type="checkbox" class="form-checkbox" id="myinput" /><label for="myinput">My label</label>
@@ -89,6 +97,46 @@ input[type="checkbox"].form-checkbox {
             @include form-checkbox-color(#fff);
         }
     }
+
+    // &.full-size {
+    //     & + label {
+    //         @include form-fullscreen-box(transparent, $brand-success, $brand-success);
+    //         cursor: pointer;
+    //         &:after {
+    //             content: "f00c";
+    //         }
+
+    //         &:hover {
+    //             @include form-fullscreen-box(transparent, $brand-danger, $brand-danger);
+    //             background-color: rgba($brand-danger, .5);
+    //             &:after {
+    //                 content: "f00d";
+    //             }
+    //         }
+
+    //         &:before {
+    //             display: none;
+    //         }
+    //         &:after {
+    //             display: none;
+    //         }
+    //     }
+
+    //     &:not(:checked) + label {
+    //         @include form-fullscreen-box(transparent, $brand-danger, $brand-danger);
+    //         &:after {
+    //             content: "f00d";
+    //         }
+
+    //         &:hover {
+    //             @include form-fullscreen-box(transparent, $brand-success, $brand-success);
+    //             background-color: rgba($brand-success, .5);
+    //             &:after {
+    //                 content: "f00c";
+    //             }
+    //         }
+    //     }
+    // }
 }
 
 /** Input styles with an adjacent label
